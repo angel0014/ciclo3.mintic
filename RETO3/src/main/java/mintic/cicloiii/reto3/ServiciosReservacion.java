@@ -22,21 +22,21 @@ public class ServiciosReservacion {
         if(reservacion.getIdReservation()==null){
             return metodosCrud.save(reservacion);
         }else{
-            Optional<Reservacion> e=metodosCrud.getReservacion(reservacion.getIdReservation());
-            if(e.isEmpty()){
+            //Optional<Reservacion> e=metodosCrud.getReservacion(reservacion.getIdReservation());
+            //if(e.isEmpty()){
                 return metodosCrud.save(reservacion);
 
-            }else{
-                return reservacion;
+           // }else{
+               // return reservacion;
 
-            }
+            //}
         } 
     }
 
     public Reservacion update(Reservacion reservacion){
         if(reservacion.getIdReservation()!=null){
             Optional<Reservacion> e=metodosCrud.getReservacion(reservacion.getIdReservation());
-            if(!e.isEmpty()){
+            //if(!e.isEmpty()){
                 if(reservacion.getStartDate()!=null){
                     e.get().setStartDate(reservacion.getStartDate());
 
@@ -52,9 +52,9 @@ public class ServiciosReservacion {
                
                 metodosCrud.save(e.get());
                 return e.get();
-            }else{
-                return reservacion;
-            }  
+            //}else{
+                //return reservacion;
+           // }  
         }else{
             return reservacion;
         }

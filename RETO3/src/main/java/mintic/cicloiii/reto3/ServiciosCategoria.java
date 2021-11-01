@@ -22,21 +22,21 @@ public class ServiciosCategoria {
         if(categoria.getId()==null){
             return metodosCrud.save(categoria);
         }else{
-            Optional<Categoria> categoria1=metodosCrud.getCategoria(categoria.getId());
-            if(categoria1.isEmpty()){
+            // Optional<Categoria> categoria1=metodosCrud.getCategoria(categoria.getId());
+            //if(categoria1.isEmpty()){
                 return metodosCrud.save(categoria);
 
-            }else{
-                return categoria;
+        //     }else{
+        //         return categoria;
 
-            }
+        //     }
         } 
     }
 
     public Categoria update(Categoria categoria){
         if(categoria.getId()!=null){
             Optional<Categoria> g=metodosCrud.getCategoria(categoria.getId());
-            if(!g.isEmpty()){
+            //if(!g.isEmpty()){
                 
                 if(categoria.getDescription()!=null){
                     g.get().setDescription(categoria.getDescription());
@@ -46,7 +46,7 @@ public class ServiciosCategoria {
                     g.get().setName(categoria.getName());
                 }
                 metodosCrud.save(g.get());
-            }
+            //}
             
         }
         return categoria;

@@ -22,21 +22,21 @@ public class ServiciosCustome {
         if(custome.getId()==null){
             return metodosCrud.save(custome);
         }else{
-            Optional<Custome> e=metodosCrud.getCustome(custome.getId());
-            if(e.isEmpty()){
+            //Optional<Custome> e=metodosCrud.getCustome(custome.getId());
+            //if(e.isEmpty()){
                 return metodosCrud.save(custome);
 
-            }else{
-                return custome;
+            //}else{
+                //(return custome;
 
-            }
+            //}
         } 
     }
 
     public Custome update(Custome custome){
         if(custome.getId()!=null){
             Optional<Custome> e=metodosCrud.getCustome(custome.getId());
-            if(!e.isEmpty()){
+            //if(!e.isEmpty()){
                 if(custome.getName()!=null){
                     e.get().setName(custome.getName());
 
@@ -58,9 +58,9 @@ public class ServiciosCustome {
                 }
                 metodosCrud.save(e.get());
                 return e.get();
-            }else{
-                return custome;
-            }  
+            //}else{
+                //return custome;
+            //}  
         }else{
             return custome;
         }

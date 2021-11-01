@@ -22,21 +22,21 @@ public class ServiciosCliente {
         if(client.getIdClient()==null){
             return metodosCrud.save(client);
         }else{
-            Optional<Cliente> e=metodosCrud.getCliente(client.getIdClient());
-            if(e.isEmpty()){
+            //Optional<Cliente> e=metodosCrud.getCliente(client.getIdClient());
+            //if(e.isEmpty()){
                 return metodosCrud.save(client);
 
-            }else{
-                return client;
+            //}else{
+                //return client;
 
-            }
+           // }
         } 
     }
 
     public Cliente update(Cliente client){
         if(client.getIdClient()!=null){
             Optional<Cliente> e=metodosCrud.getCliente(client.getIdClient());
-            if(!e.isEmpty()){
+            //if(!e.isEmpty()){
                 if(client.getName()!=null){
                     e.get().setName(client.getName());
 
@@ -47,7 +47,7 @@ public class ServiciosCliente {
             
                 if(client.getPassword()!=null){
                     e.get().setPassword(client.getPassword());
-                }
+                //}
 
                 
                 metodosCrud.save(e.get());

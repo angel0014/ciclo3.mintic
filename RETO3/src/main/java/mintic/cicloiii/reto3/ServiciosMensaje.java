@@ -22,21 +22,21 @@ public class ServiciosMensaje {
         if(message.getIdMessage()==null){
             return metodosCrud.save(message);
         }else{
-            Optional<Mensaje> e=metodosCrud.getMensaje(message.getIdMessage());
-            if(e.isEmpty()){
+            //Optional<Mensaje> e=metodosCrud.getMensaje(message.getIdMessage());
+            //if(e.isEmpty()){
                 return metodosCrud.save(message);
 
-            }else{
-                return message;
+            //}else{
+                //return message;
 
-            }
+            //}
         } 
     }
 
     public Mensaje update(Mensaje message){
         if(message.getIdMessage()!=null){
             Optional<Mensaje> e=metodosCrud.getMensaje(message.getIdMessage());
-            if(!e.isEmpty()){
+            //if(!e.isEmpty()){
                 if(message.getMessageText()!=null){
                     e.get().setMessageText(message.getMessageText());
 
@@ -44,9 +44,9 @@ public class ServiciosMensaje {
                
                 metodosCrud.save(e.get());
                 return e.get();
-            }else{
-                return message;
-            }  
+            //}else{
+                //return message;
+            //}  
         }else{
             return message;
         }
