@@ -16,6 +16,9 @@ public class Costume implements Serializable{
     private Integer id;
 
     @Column(length=45)
+    private String name;
+
+    @Column(length=45)
     private String brand;
 
     @Column(length=4)
@@ -24,10 +27,8 @@ public class Costume implements Serializable{
     @Column(length=250)
     private String description;
 
-    @Column(length=45)
-    private String name;
+   
     
-
     @ManyToOne
     @JoinColumn(name="idCategory")
     @JsonIgnoreProperties("costumes")
