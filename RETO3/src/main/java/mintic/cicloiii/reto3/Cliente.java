@@ -11,10 +11,20 @@ import java.util.List;
 public class Cliente implements Serializable{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    
+    @Column(length=4)
     private Integer idClient;
+    
+    @Column(length=45)
     private String email;
+    
+    @Column(length=45)
     private String password;
+
+    @Column(length=45)
     private String name;
+
+    @Column(length=4)
     private Integer age;
 
 @OneToMany(cascade ={CascadeType.PERSIST}, mappedBy ="client")

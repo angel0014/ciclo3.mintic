@@ -9,7 +9,10 @@ import java.io.Serializable;
 public class Mensaje implements Serializable{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(length=4)
     private Integer idMessage;
+    
+    @Column(length=250)
     private String messageText;
  
     @ManyToOne

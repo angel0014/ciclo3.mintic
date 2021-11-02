@@ -12,10 +12,19 @@ public class Custome implements Serializable{
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(length=4)
     private Integer id;
+
+    @Column(length=45)
     private String brand;
+
+    @Column(length=4)
     private Integer year;
-    private Integer description;
+
+    @Column(length=250)
+    private String description;
+
+    @Column(length=45)
     private String name;
     
 
@@ -56,11 +65,11 @@ public class Custome implements Serializable{
         this.year = year;
     }
 
-    public Integer getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(Integer description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 

@@ -25,6 +25,7 @@ public class Reservacion implements Serializable{
     @JsonIgnoreProperties({"reservations", "messages"})
     private Cliente client;
 
+    @Column(length=5)
     private String score;
 
     public Integer getIdReservation() {
