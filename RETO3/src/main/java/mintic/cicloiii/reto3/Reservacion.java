@@ -18,7 +18,7 @@ public class Reservacion implements Serializable{
     @ManyToOne
     @JoinColumn(name="id")
     @JsonIgnoreProperties({"reservations"})
-    private Custome custome;
+    private Costume costume;
 
     @ManyToOne
     @JoinColumn(name="idClient")
@@ -60,12 +60,12 @@ public class Reservacion implements Serializable{
         this.status = status;
     }
 
-    public Custome getCustome() {
-        return custome;
+    public Costume getCostume() {
+        return costume;
     }
 
-    public void setCustome(Custome custome) {
-        this.custome = custome;
+    public void setCostume(Costume costume) {
+        this.costume = costume;
     }
 
     public Cliente getClient() {

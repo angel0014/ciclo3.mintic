@@ -17,36 +17,36 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/Custome")
+@RequestMapping("/api/Costume")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class ControladorCustome {
+public class ControladorCostume {
     @Autowired
-    private ServiciosCustome servicio;
+    private ServiciosCostume servicio;
     @GetMapping("/all")
-    public List<Custome> getCustomes(){
+    public List<Costume> getCostumes(){
         return servicio.getAll();
     }
 
     @GetMapping("/{id")
-    public Optional<Custome> getCustome(@PathVariable("id") int idCustome){
-        return servicio.getCustome(idCustome);
+    public Optional<Costume> getCostume(@PathVariable("id") int idCostume){
+        return servicio.getCostume(idCostume);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Custome save(@RequestBody Custome custome){
-        return servicio.save(custome);
+    public Costume save(@RequestBody Costume costume){
+        return servicio.save(costume);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Custome update(@RequestBody Custome custome){
-        return servicio.update(custome);
+    public Costume update(@RequestBody Costume costume){
+        return servicio.update(costume);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int idCustome){
-        return servicio.deleteCustome(idCustome);
+    public boolean delete(@PathVariable("id") int idCostume){
+        return servicio.deleteCostume(idCostume);
     }
 }

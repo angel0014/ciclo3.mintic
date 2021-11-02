@@ -6,9 +6,9 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name="custome")
+@Table(name="Costume")
 
-public class Custome implements Serializable{
+public class Costume implements Serializable{
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -30,15 +30,15 @@ public class Custome implements Serializable{
 
     @ManyToOne
     @JoinColumn(name="idCategory")
-    @JsonIgnoreProperties("customes")
+    @JsonIgnoreProperties("costumes")
     private Categoria category;
 
-    @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="custome")
-    @JsonIgnoreProperties({"custome", "client"})
+    @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="costume")
+    @JsonIgnoreProperties({"costume", "client"})
     private List<Mensaje> messages;
 
-    @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="custome")
-    @JsonIgnoreProperties({"custome", "client"})
+    @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="costume")
+    @JsonIgnoreProperties({"costume", "client"})
     private List<Reservacion> reservations;
 
     public Integer getId() {
